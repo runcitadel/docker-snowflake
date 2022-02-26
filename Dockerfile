@@ -1,6 +1,8 @@
+ARG VERSION=main
+
 FROM docker.io/library/golang:1.17 AS builder
 
-ARG VERSION=main
+ARG VERSION
 
 WORKDIR /builder
 RUN git clone --depth=1 -b ${VERSION} https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/
